@@ -1,0 +1,15 @@
+<html>
+<head>
+
+</head>
+<body>
+{% extends "tarefas/base.html" %}
+{% block content %}
+<div class="page-header">
+    <h2>Olá {{ user.first_name }}</h2>
+</div>
+Você tem {{ counter }} {% if count > 1 %}tarefas abertas{% else %}tarefa aberta{% endif %}</br>
+<a href="/tarefas/">Minhas Tarefas</a>
+{% endblock %}
+</body>
+</html>

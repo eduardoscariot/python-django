@@ -1,0 +1,19 @@
+<html>
+<head>
+
+</head>
+{% extends "tarefas/base.html" %}
+{% block content %}
+<div class="page_header">
+    <h2>Detalhes da Tarefa</h2>
+</div>
+Nome: {{ object.nome }}<br/>
+Data de Criação: {{ object.data_de_criacao|date:"d/m/Y H:i"}}<br/>
+Descirção: {{ object.descricao }}</br>
+Status: {% if object.status %}Finalizado{% else %}Aberto{% endif %}<br/>
+{% if object.data_de_execucao %}
+Datade Execução: {{ object.data_de_execucao }}<br/>
+{% endif %}
+{% endblock %}
+</body>
+</html>

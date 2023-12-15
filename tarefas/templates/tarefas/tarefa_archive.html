@@ -1,0 +1,33 @@
+<html>
+<head>
+
+</head>
+<body>
+{% extends "tarefas/base.html" %}
+{% block content %}
+<div class="page_header">
+    <h2>Minhas Tarefas</h2>
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Data de criação</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in latest %}
+    <tr>
+        <td><a href="/tarefas/{{ item.pk }}">{{ item.nome }}</a></td>
+        <td>{{ item.data_de_criacao|date:"d/m/Y H:i" }}</td>
+        <td>{% if item.status %}Finalizado{% else %}Aberto{% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+</table>
+</body>
+</html>
