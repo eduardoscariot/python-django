@@ -14,7 +14,7 @@ class Tarefa(Model):
     nome = CharField(max_length=200, verbose_name='nome')
     descricao = TextField(verbose_name='descrição', null=True, blank=True)
     status = BooleanField(default=False, verbose_name='finalizado')
-    usuario = ForeignKey(User, verbose_name="usuário", null=True, blank=True, on_delete=deletion.PROTECT)
+    usuario = ForeignKey(User, verbose_name="usuário", null=True, blank=True, on_delete=deletion.PROTECT, related_name='tarefas')
 
     class Meta:
         ordering = ['-data_de_criacao']
