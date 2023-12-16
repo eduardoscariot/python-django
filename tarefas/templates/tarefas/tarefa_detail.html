@@ -13,5 +13,7 @@
     <dt>Datade Execução:</dt>
     <dd>{{ object.data_de_execucao }}</dd>
     {% endif %}
+    <dt>Usuário</dt>
+    <dd>{% if object.usuario %}{{ object.usuario.first_name }}{% else %}Sem usuário{% endif %}</dd>
 </dl>
 {% endblock %}

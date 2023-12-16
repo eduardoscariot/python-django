@@ -53,7 +53,9 @@ class CriarTarefa(View):
 
     def post(self, request, *args, **kwargs):
         form = FormTarefa(request.POST)
+        print(request.user)
         if form.is_valid():
+            #form['usuario'] = request.user
             form.save()
             return redirect('/tarefas/')
         else:
